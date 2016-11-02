@@ -1,0 +1,18 @@
+<h1>Index</h1>
+<% unless @docs.blank? %>
+	<% @docs.each do |d| %>
+		<%= link_to doc_path(d) do %>
+			<div class="well">
+				<h1><%= d.title %></h1>
+				<h3><%= time_ago_in_words(d.created_at) %></h3>
+				<h3><%= truncate(d.content, length: 50) %></h3>
+			</div>
+		<% end %>
+	<% end %>
+	
+<% else %>
+	<div class="well">
+		<p>You haven't created any documents yet. Go ahead and create a new document.</p>
+	</div>
+<% end %>
+<%= link_to "Create a New Doc", new_doc_path, class: "btn btn-success" %>

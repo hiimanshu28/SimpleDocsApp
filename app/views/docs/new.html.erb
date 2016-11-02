@@ -1,0 +1,14 @@
+<h1>Create a New Doc</h1>
+<%= form_for(@doc) do |f| %>
+	
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :content %>
+	<%= f.text_area :content %>
+
+	<%= f.submit "Create", class: 'btn btn-success' %>
+
+<% end %>
+
+<%= link_to "Cancel", docs_path, class: 'btn btn-warning' %>

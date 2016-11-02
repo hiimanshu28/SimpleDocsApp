@@ -1,0 +1,7 @@
+<div class="well">
+	<h1><%= @doc.title %></h1>
+	<h3><%= @doc.content %></h3>
+	<%= link_to 'Edit this Doc', edit_doc_path(@doc), class: 'btn btn-warning' %>
+	<%= link_to "Delete", doc_path(@doc), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+</div>
+<%= link_to "Index", docs_path, class: "btn btn-primary" %>
